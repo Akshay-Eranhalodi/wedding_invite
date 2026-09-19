@@ -7206,10 +7206,25 @@ input, select, textarea {
 
 	}
 
-	.gallery article .image {
+	/* .gallery article .image {
 		background-color: rgba(0, 0, 0, 0.125);
-	}
+	} */
+/* Ensure the link container enforces a fixed ratio and crops overflow */
+.gallery article .image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Change to 1 / 1 for square, or 16 / 9 for widescreen */
+    overflow: hidden;
+}
 
+/* Force the image to completely fill the box without distorting */
+.gallery article .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Keeps the middle of the image in frame */
+    display: block;
+}
 /* Wrapper (style1) */
 
 	.wrapper.style1 > .inner {
